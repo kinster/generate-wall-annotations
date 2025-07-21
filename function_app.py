@@ -11,19 +11,14 @@ from DrawWallLines import annotate_and_save_image
 
 app = func.FunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS)
 
-@app.function_name(name="annotateAndSaveImage")
-@app.route(route="annotateAndSaveImage", methods=["POST"])
+@app.function_name(name="annotatewalls")
+@app.route(route="annotatewalls", methods=["POST"])
 def ExtractScale(req: func.HttpRequest) -> func.HttpResponse:
     try:
 
         data = req.get_json()
 
         base64_img = data["base64"]
-
-        endpoint = os.environ["AZURE_VISION_ENDPOINT"]
-        key = os.environ["AZURE_VISION_KEY"]
-        logging.info(endpoint)
-        logging.info(key)
 
         logging.info('Python HTTP trigger function processed a request.')
 
