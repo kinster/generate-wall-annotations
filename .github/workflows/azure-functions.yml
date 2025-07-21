@@ -29,4 +29,4 @@ jobs:
 
       - name: 🚀 Deploy to Azure Function App
         run: |
-          func azure functionapp publish generate-wall-annotiations-func --python
+          func azure functionapp publish generate-wall-annotations-func --python
